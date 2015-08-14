@@ -1,12 +1,14 @@
 __author__ = 'spotapov'
-import TimeC
 
-d15 = TimeC.ws['D15'].value
-print(d15)
+def Check_week(ws):
+    week_result = []
+    d15 = ws['D15'].value
+    print("Checking week")
 
-if d15 > 40:
-        week_warning = True
+    if d15 > 40:
+        week_result.append(str(d15)+"WARN")
         print("Warning: Week is more then 40!")
-else:
-        print("Week number is not bigger then 40 hours")
-
+    else:
+        week_result.append(d15)
+        print("Seems Total Week hours are OK")
+    return week_result

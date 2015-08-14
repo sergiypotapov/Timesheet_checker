@@ -1,14 +1,16 @@
 __author__ = 'spotapov'
-import TimeC
 
-days = tuple(TimeC.ws.iter_rows('E15:I15'))
-for row in days:
-    for cell in row:
-        if cell.value > 8:
-            day_warning = True
-            print(cell.value, " - - Error")
-        else:
-            print(int(cell.value), str(" - - OK"))
-
-#print(days.type)
-#print(days)
+def check_days(ws):
+    days_result = []
+    days = tuple(ws.iter_rows('E15:I15'))
+    print("Checking days")
+    for row in days:
+        for cell in row:
+            if cell.value > 8:
+                days_result.append(str(cell.value)+"WARN")
+                print("Warning: one or more Total Days are more than 8 ")
+            else:
+                days_result.append(cell.value)
+            #print(days)
+    return days_result
+#check_days()
