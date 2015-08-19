@@ -1,14 +1,17 @@
 __author__ = 'spotapov'
 
-def Check_week(ws):
+def Check_week(ws,cn):
     week_result = []
-    d15 = ws['D15'].value
-    print("Checking week")
-
-    if d15 > 40:
-        week_result.append(str(d15)+"WARN")
-        print("Warning: Week is more then 40!")
-    else:
-        week_result.append(d15)
-        print("Seems Total Week hours are OK")
-    return week_result
+    ncn = cn[1:]
+    cn = 'D'+ncn
+    d15 = ws[cn].value
+    d15 = int(d15)
+    #print("Checking week")
+    if d15 != None:
+        if d15 > 40:
+            print("Warning: Week is more then 40! Value is ", d15)
+            error_trigger = 'Warning'
+        else:
+            print("Week OK - ", d15 )
+            error_trigger = 'OK'
+    return error_trigger
