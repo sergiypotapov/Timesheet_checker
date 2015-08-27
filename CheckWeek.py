@@ -4,6 +4,7 @@ def Check_week(ws,cn):
     week_result = []
     ncn = cn[1:]
     cn = 'D'+ncn
+#TODO make human readable variable
     d15 = ws[cn].value
     d15 = int(d15)
     #print("Checking week")

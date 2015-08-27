@@ -6,7 +6,6 @@ def check_days(ws,cn):
     one_cn = 'E'+cn
     second_cn = ':I'+cn
     result_cn = one_cn+second_cn
-    days_result = []
     days = tuple(ws.iter_rows(result_cn))
     #print("Checking days")
     for row in days:

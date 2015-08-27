@@ -10,7 +10,7 @@ def CheckFileNameMatch(file, week_n):
         if week_in_file == week_n:
             print("File name OK")
         else:
-            print("Warning: File Name is wrong - ", file, "\n", "Week Number in file:", week_in_file, " but Current Week Number:", week_n)
+            print("Warning: File Name is wrong - ", file, "\n", "Week Number in file name:", week_in_file, " but Current Week Number:", week_n)
     else:
         print("Warning: File Format is wrong - ", file)
 
