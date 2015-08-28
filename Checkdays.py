@@ -13,14 +13,13 @@ def check_days(ws,cn):
             cell.value = int(cell.value)
             if cell.value != None:
                 if cell.value > 8:
-                    print("Warning: one or more Total Days are more than 8. The value is ", cell.value)
-                    error_trigger = 'Warning'
+                    error_trigger = "Warning: one or more Total Days are more than 8."
                 else:
                     error_trigger = 'OK'
             else:
                 print("No value here")
-        if error_trigger != "Warning":
-            print("Days OK")
+        if error_trigger != "Warning: one or more Total Days are more than 8.":
+            error_trigger = "Days OK"
             #print(days)
     return error_trigger
 #check_days()

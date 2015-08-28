@@ -8,12 +8,12 @@ def CheckFileNameMatch(file, week_n):
         week_in_file = re.findall(r'\d+',file)
         week_in_file = week_in_file[0]
         if week_in_file == week_n:
-            print("File name OK")
+            error_triger = "File name OK"
         else:
-            print("Warning: File Name is wrong - ", file, "\n", "Week Number in file name:", week_in_file, " but Current Week Number:", week_n)
+            error_triger="Warning: File Name is wrong"
     else:
-        print("Warning: File Format is wrong - ", file)
-
+        error_triger="Warning: File Name is wrong"
+    return error_triger
 
 
     #print(patern)

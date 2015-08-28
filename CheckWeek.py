@@ -10,9 +10,9 @@ def Check_week(ws,cn):
     #print("Checking week")
     if d15 != None:
         if d15 > 40:
-            print("Warning: Week is more then 40! Value is ", d15)
-            error_trigger = 'Warning'
+            #print("Warning: Week is more then 40! Value is ", d15)
+            error_trigger = 'Total Week Warning'
         else:
-            print("Week OK - ", d15 )
-            error_trigger = 'OK'
+            #print("Week OK - ", d15 )
+            error_trigger = 'Total Week OK'
     return error_trigger
