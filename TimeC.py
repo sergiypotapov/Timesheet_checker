@@ -39,7 +39,7 @@ def RunTests(arg1):
         b = CheckWeek.Check_week(ws,c)
         pre_result = [file,a,b,d,e]
         result.append(pre_result)
-        print(result)
+        #print(result)
     # print("\n Results for days:\n",a,"\n","Results a week:\n",b)
     #else:
         #print(file, "Seems is not a Timesheet report")

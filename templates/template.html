@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flask Template Example</title>
+    <title>Timesheet Checker</title>
   </head>
-  <body>
-  <h1> Week week_n </h1>
+  <p>
+  <h1> Week {{week_n}} </h1>
   {% for i in file_list %}
-  <p>{% for n in i %}</p>
-        <p>{{n}}</p>
+    {% for n in i %}
+        {% if "LUXOFT" in n %}
+        {{n}}
+        {% elif "Warning" in n %}
+            <p> <span style="color:red">{{n}}</span> </p>
+        {% else %}
+            <p> <span style="color:green">{{n}}</span> </p>
+        {% endif %}
+    {% endfor %}
   {% endfor %}
   </body>
 </html>
