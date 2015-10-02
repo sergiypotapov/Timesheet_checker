@@ -13,15 +13,17 @@ import sys
 #TODO WBS code corresponds to indicated Phase
 #TODO Check if someone forgot to send a file
 
-
-def RunTests(arg1):
+result = []
+def RunTests(arg1, week_n):
 
 # import all files from the location
-    dir = sys.argv[1]
+    dir = arg1
+    #dir = sys.argv[1]
     file_list = os.listdir(dir)
 
 # getting current week number
-    week_n = GetCurrentWeekNumber.GetCurrentWeekNuber()
+    if week_n == None:
+        week_n = GetCurrentWeekNumber.GetCurrentWeekNuber()
 
     for file in file_list:
     #if file.endswith('V11A.xlsx'):
@@ -36,8 +38,15 @@ def RunTests(arg1):
                 #TODO make human readable variables
         a = Checkdays.check_days(ws,c)
         b = CheckWeek.Check_week(ws,c)
+        pre_result = [file,a,b,d,e]
+        result.append(pre_result)
+        #print(result)
     # print("\n Results for days:\n",a,"\n","Results a week:\n",b)
     #else:
         #print(file, "Seems is not a Timesheet report")
-if __name__ == "__main__":
-    RunTests(sys.argv[1])
+    return result, week_n
+# if __name__ == "__main__":
+#     RunTests(sys.argv[1])
+# def hi ():
+#     a = [1,2,3]
+#     return a
