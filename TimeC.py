@@ -14,7 +14,7 @@ import sys
 #TODO Check if someone forgot to send a file
 
 result = []
-def RunTests(arg1):
+def RunTests(arg1, week_n):
 
 # import all files from the location
     dir = arg1
@@ -22,7 +22,8 @@ def RunTests(arg1):
     file_list = os.listdir(dir)
 
 # getting current week number
-    week_n = GetCurrentWeekNumber.GetCurrentWeekNuber()
+    if week_n == None:
+        week_n = GetCurrentWeekNumber.GetCurrentWeekNuber()
 
     for file in file_list:
     #if file.endswith('V11A.xlsx'):

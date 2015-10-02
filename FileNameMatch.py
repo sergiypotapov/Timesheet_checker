@@ -16,6 +16,7 @@ def CheckFileNameMatch(file, week_n):
     return error_triger
 
 
+
     #print(patern)
 
-#CheckFileNameMatch('LUXOFT_URTDSM_timesheet_10_2015_Denys_LebedevV11A.xlsx', 35)
+CheckFileNameMatch('LUXOFT_URTDSM_timesheet_10_2015_Denys_LebedevV11A.xlsx', 35)
